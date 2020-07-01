@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UeR-yH-DFT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Repos Table View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ReposTableViewController" customModule="BitMasterMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите имя репозитория" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxg-lw-J5Z" userLabel="EmptyDataLabel">
+                                <rect key="frame" x="102" y="438" width="210.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-Jq-KEe">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eOC-q4-cuw">
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="120" id="U0v-ev-hHM" customClass="RepoTableViewCell" customModule="BitMasterMap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U0v-ev-hHM" id="FCu-8S-VCC">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8e-cl-gzN" userLabel="OpenMapButton">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="v8e-cl-gzN" secondAttribute="height" multiplier="1:1" id="3Wg-Kf-kao"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <state key="normal" title="На карту">
+                                                        <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didTapOpeningMap:" destination="U0v-ev-hHM" eventType="touchUpInside" id="6RJ-SN-KRM"/>
+                                                    </connections>
+                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="9JD-oC-wML">
+                                                    <rect key="frame" x="130" y="11" width="264" height="98"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repo name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcA-Eb-G6n" userLabel="RepoNameLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="136" height="37.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcd-D3-KAk" userLabel="StarGazingCountLabel">
+                                                            <rect key="frame" x="0.0" y="44.5" width="79.5" height="22.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="X2d-31-1uM">
+                                                            <rect key="frame" x="0.0" y="74" width="22" height="24"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="v8e-cl-gzN" firstAttribute="leading" secondItem="FCu-8S-VCC" secondAttribute="leading" id="BCK-gp-iCE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9JD-oC-wML" secondAttribute="bottom" id="BtU-b0-dMn"/>
+                                                <constraint firstItem="v8e-cl-gzN" firstAttribute="top" secondItem="FCu-8S-VCC" secondAttribute="top" id="Jsj-Bt-ttK"/>
+                                                <constraint firstItem="9JD-oC-wML" firstAttribute="top" secondItem="FCu-8S-VCC" secondAttribute="topMargin" id="Rzp-qZ-cK2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9JD-oC-wML" secondAttribute="trailing" id="fQD-cc-tAL"/>
+                                                <constraint firstAttribute="bottom" secondItem="v8e-cl-gzN" secondAttribute="bottom" id="gMJ-E5-t3j"/>
+                                                <constraint firstItem="9JD-oC-wML" firstAttribute="leading" secondItem="v8e-cl-gzN" secondAttribute="trailing" constant="10" id="idE-sT-bXo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="openMapButton" destination="v8e-cl-gzN" id="ggr-6G-KvK"/>
+                                            <outlet property="repoNameLabel" destination="dcA-Eb-G6n" id="7dt-Do-6ne"/>
+                                            <outlet property="starGazingCountLabel" destination="Lcd-D3-KAk" id="SaZ-LS-fuz"/>
+                                            <outlet property="starImageView" destination="X2d-31-1uM" id="ksw-vK-GER"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="CDz-cq-pnd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Iv2-XB-b22"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eOC-q4-cuw" firstAttribute="top" secondItem="dB4-Jq-KEe" secondAttribute="bottom" id="1qQ-wc-6pg"/>
+                            <constraint firstItem="dB4-Jq-KEe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BWl-MG-Uli"/>
+                            <constraint firstItem="eOC-q4-cuw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NnP-eO-ant"/>
+                            <constraint firstItem="eOC-q4-cuw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="O5v-q6-wEX"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="eOC-q4-cuw" secondAttribute="bottom" id="Qaa-UG-sxk"/>
+                            <constraint firstItem="Qxg-lw-J5Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zup-TD-Kpl"/>
+                            <constraint firstItem="Qxg-lw-J5Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bJN-Qr-ZkB"/>
+                            <constraint firstItem="dB4-Jq-KEe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lUR-2W-FqR"/>
+                            <constraint firstItem="dB4-Jq-KEe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tPW-vj-Apk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cqu-0t-I5P"/>
+                    <connections>
+                        <outlet property="emptyDataLabel" destination="Qxg-lw-J5Z" id="7ti-er-ehS"/>
+                        <outlet property="searchBar" destination="dB4-Jq-KEe" id="2Qb-b2-2fi"/>
+                        <outlet property="tableView" destination="eOC-q4-cuw" id="VtJ-Yh-HYz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="87.723214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zt2-Ux-YUR">
+            <objects>
+                <navigationController id="UeR-yH-DFT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hsQ-bo-TwC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="e0K-iA-fho"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ua-tt-Si8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-572" y="88"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="star" catalog="system" width="64" height="58"/>
+    </resources>
+</document>

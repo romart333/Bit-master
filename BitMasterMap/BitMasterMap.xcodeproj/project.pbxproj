@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A2EB655E5BD12013B19A0D97 /* libPods-BitMasterMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F106F56FCAD2A30CEFCC1442 /* libPods-BitMasterMap.a */; };
+		EF0A182824ACA0790066A2B1 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0A182724ACA0790066A2B1 /* APIService.swift */; };
+		EF0A182B24ACA25B0066A2B1 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0A182A24ACA25B0066A2B1 /* ErrorMessage.swift */; };
+		EF65DF4C24950842000E16FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65DF4B24950842000E16FE /* AppDelegate.swift */; };
+		EF65DF5024950842000E16FE /* ReposTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65DF4F24950842000E16FE /* ReposTableViewController.swift */; };
+		EF65DF5324950842000E16FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF65DF5124950842000E16FE /* Main.storyboard */; };
+		EF65DF5524950843000E16FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF65DF5424950843000E16FE /* Assets.xcassets */; };
+		EF65DF5824950843000E16FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF65DF5624950843000E16FE /* LaunchScreen.storyboard */; };
+		EF65DF60249516AC000E16FE /* RepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65DF5F249516AC000E16FE /* RepoModel.swift */; };
+		EF65DF6224951F19000E16FE /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65DF6124951F19000E16FE /* RepoTableViewCell.swift */; };
+		EF65DF6424952386000E16FE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65DF6324952386000E16FE /* MapViewController.swift */; };
+		EF6ED40624A529B900C1014F /* MapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6ED40524A529B900C1014F /* MapsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		56365887B55853A801C0F10D /* Pods-BitMasterMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitMasterMap.debug.xcconfig"; path = "Target Support Files/Pods-BitMasterMap/Pods-BitMasterMap.debug.xcconfig"; sourceTree = "<group>"; };
+		8A68DCAB6017524C5CA68457 /* Pods-BitMasterMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitMasterMap.release.xcconfig"; path = "Target Support Files/Pods-BitMasterMap/Pods-BitMasterMap.release.xcconfig"; sourceTree = "<group>"; };
+		EF0A182724ACA0790066A2B1 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		EF0A182A24ACA25B0066A2B1 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		EF65DF4824950842000E16FE /* BitMasterMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitMasterMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF65DF4B24950842000E16FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF65DF4F24950842000E16FE /* ReposTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposTableViewController.swift; sourceTree = "<group>"; };
+		EF65DF5224950842000E16FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF65DF5424950843000E16FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF65DF5724950843000E16FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF65DF5924950843000E16FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF65DF5F249516AC000E16FE /* RepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
+		EF65DF6124951F19000E16FE /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		EF65DF6324952386000E16FE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		EF6ED40324A5299B00C1014F /* MapsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapsViewController.h; sourceTree = "<group>"; };
+		EF6ED40424A529B900C1014F /* BitMasterMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BitMasterMap-Bridging-Header.h"; sourceTree = "<group>"; };
+		EF6ED40524A529B900C1014F /* MapsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapsViewController.m; sourceTree = "<group>"; };
+		F106F56FCAD2A30CEFCC1442 /* libPods-BitMasterMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BitMasterMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF65DF4524950842000E16FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2EB655E5BD12013B19A0D97 /* libPods-BitMasterMap.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00980FD86301B0130AE263F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F106F56FCAD2A30CEFCC1442 /* libPods-BitMasterMap.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF0A182624AC9F630066A2B1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EF0A182724ACA0790066A2B1 /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EF0A182924ACA24D0066A2B1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EF0A182A24ACA25B0066A2B1 /* ErrorMessage.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EF65DF3F24950842000E16FE = {
+			isa = PBXGroup;
+			children = (
+				EF65DF4A24950842000E16FE /* BitMasterMap */,
+				EF65DF4924950842000E16FE /* Products */,
+				F85D9BFDE338D9F546271405 /* Pods */,
+				00980FD86301B0130AE263F5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EF65DF4924950842000E16FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF65DF4824950842000E16FE /* BitMasterMap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF65DF4A24950842000E16FE /* BitMasterMap */ = {
+			isa = PBXGroup;
+			children = (
+				EF0A182924ACA24D0066A2B1 /* Utils */,
+				EF0A182624AC9F630066A2B1 /* Services */,
+				EF65DF4B24950842000E16FE /* AppDelegate.swift */,
+				EF65DF4F24950842000E16FE /* ReposTableViewController.swift */,
+				EF65DF5124950842000E16FE /* Main.storyboard */,
+				EF65DF5624950843000E16FE /* LaunchScreen.storyboard */,
+				EF65DF5424950843000E16FE /* Assets.xcassets */,
+				EF65DF5924950843000E16FE /* Info.plist */,
+				EF65DF5F249516AC000E16FE /* RepoModel.swift */,
+				EF65DF6124951F19000E16FE /* RepoTableViewCell.swift */,
+				EF65DF6324952386000E16FE /* MapViewController.swift */,
+				EF6ED40324A5299B00C1014F /* MapsViewController.h */,
+				EF6ED40524A529B900C1014F /* MapsViewController.m */,
+				EF6ED40424A529B900C1014F /* BitMasterMap-Bridging-Header.h */,
+			);
+			path = BitMasterMap;
+			sourceTree = "<group>";
+		};
+		F85D9BFDE338D9F546271405 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56365887B55853A801C0F10D /* Pods-BitMasterMap.debug.xcconfig */,
+				8A68DCAB6017524C5CA68457 /* Pods-BitMasterMap.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF65DF4724950842000E16FE /* BitMasterMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF65DF5C24950843000E16FE /* Build configuration list for PBXNativeTarget "BitMasterMap" */;
+			buildPhases = (
+				E53E595D3BE1F23D673A79D6 /* [CP] Check Pods Manifest.lock */,
+				EF65DF4424950842000E16FE /* Sources */,
+				EF65DF4524950842000E16FE /* Frameworks */,
+				EF65DF4624950842000E16FE /* Resources */,
+				7B07C741E04A30F9F0C86561 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BitMasterMap;
+			productName = BitMasterMap;
+			productReference = EF65DF4824950842000E16FE /* BitMasterMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF65DF4024950842000E16FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = user167101;
+				TargetAttributes = {
+					EF65DF4724950842000E16FE = {
+						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
+					};
+				};
+			};
+			buildConfigurationList = EF65DF4324950842000E16FE /* Build configuration list for PBXProject "BitMasterMap" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF65DF3F24950842000E16FE;
+			productRefGroup = EF65DF4924950842000E16FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF65DF4724950842000E16FE /* BitMasterMap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF65DF4624950842000E16FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF65DF5824950843000E16FE /* LaunchScreen.storyboard in Resources */,
+				EF65DF5524950843000E16FE /* Assets.xcassets in Resources */,
+				EF65DF5324950842000E16FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7B07C741E04A30F9F0C86561 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BitMasterMap/Pods-BitMasterMap-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BitMasterMap/Pods-BitMasterMap-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BitMasterMap/Pods-BitMasterMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E53E595D3BE1F23D673A79D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BitMasterMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF65DF4424950842000E16FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF65DF5024950842000E16FE /* ReposTableViewController.swift in Sources */,
+				EF0A182824ACA0790066A2B1 /* APIService.swift in Sources */,
+				EF65DF6224951F19000E16FE /* RepoTableViewCell.swift in Sources */,
+				EF65DF4C24950842000E16FE /* AppDelegate.swift in Sources */,
+				EF0A182B24ACA25B0066A2B1 /* ErrorMessage.swift in Sources */,
+				EF6ED40624A529B900C1014F /* MapsViewController.m in Sources */,
+				EF65DF6424952386000E16FE /* MapViewController.swift in Sources */,
+				EF65DF60249516AC000E16FE /* RepoModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EF65DF5124950842000E16FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF65DF5224950842000E16FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF65DF5624950843000E16FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF65DF5724950843000E16FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF65DF5A24950843000E16FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF65DF5B24950843000E16FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF65DF5D24950843000E16FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56365887B55853A801C0F10D /* Pods-BitMasterMap.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				INFOPLIST_FILE = BitMasterMap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BitMasterMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BitMasterMap/BitMasterMap-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF65DF5E24950843000E16FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A68DCAB6017524C5CA68457 /* Pods-BitMasterMap.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				INFOPLIST_FILE = BitMasterMap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BitMasterMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BitMasterMap/BitMasterMap-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF65DF4324950842000E16FE /* Build configuration list for PBXProject "BitMasterMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF65DF5A24950843000E16FE /* Debug */,
+				EF65DF5B24950843000E16FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF65DF5C24950843000E16FE /* Build configuration list for PBXNativeTarget "BitMasterMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF65DF5D24950843000E16FE /* Debug */,
+				EF65DF5E24950843000E16FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF65DF4024950842000E16FE /* Project object */;
+}
