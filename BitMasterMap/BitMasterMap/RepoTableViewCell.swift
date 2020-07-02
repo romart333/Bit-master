@@ -26,19 +26,6 @@ class RepoTableViewCell: UITableViewCell {
 //    let button: UIButton = UIButton(type: .custom)
     var closure: (() -> ())?
     
-//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        button.addTarget(self, action: #selector(onButtonTap(_:)), for: .touchUpInside)
-//        self.contentView.addSubview(button)
-//        button.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-//        button.setTitle("кнопка!!!!!", for: .normal)
-//        button.backgroundColor = .red
-//    }
-    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -53,5 +40,6 @@ class RepoTableViewCell: UITableViewCell {
         if let starCount = repoModel.stargazersCount {
             starGazingCountLabel.text = String(starCount.intValue)
         }
+        setBackgroundColorForOpenMapButton(color: UIColor.blue)
     }
 }

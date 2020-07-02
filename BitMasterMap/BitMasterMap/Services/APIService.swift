@@ -14,18 +14,33 @@ class APIService {
 
     private let okStatusCode = 200
     
-    func getResults(repoName: String, perPageCount: Int, pageNumber: Int, completed: @escaping (Result<ReposModel, ErrorMessage>) -> Void) {
-        let urlString = "https://api.github.com/search/repositories?q=\(repoName)+in:name&sort=stars&order=desc&per_page=\(perPageCount)&page=\(pageNumber)"
+    private var pageNumber = 1
+    private let perPageCount = 20
+    // Github api doesn't let to get more than 1000 repos
+    private let limitRepoCount = 1000
+    private var totalCount = 1
+    
+    private var searchResults = [RepoModel]()
 
+    private var pageString: String {
+        return "page=\(pageNumber)&per_page=\(perPageCount)"
+    }
+    
+    var hasMore: Bool {
+         searchResults.count < limitRepoCount && searchResults.count < totalCount
+    }
+    
+    func getResults(searchText: String, completed: @escaping (Result<[RepoModel], ErrorMessage>) -> Void) {
+        let urlString = "https://api.github.com/search/repositories?q=\(searchText)+in:name&sort=stars&order=desc&\(pageString)"
         guard let url = URL(string: urlString) else {return}
-
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+            guard let strongSelf = self else { return }
             if let _ = error {
                 completed(.failure(.invalidData))
                 return
             }
 
-            guard let response = response as? HTTPURLResponse, response.statusCode == self.okStatusCode else {
+            guard let response = response as? HTTPURLResponse, response.statusCode == self?.okStatusCode else {
                 completed(.failure(.invalidResponse))
                 return
             }
@@ -38,13 +53,37 @@ class APIService {
             do {
                 let deconder = JSONDecoder()
                 deconder.keyDecodingStrategy = .convertFromSnakeCase
-                let results = try deconder.decode(ReposModel.self, from: data)
-                completed(.success(results))
+                
+                let json = try deconder.decode(ReposModel.self, from: data)
+                guard let results =  json.items else {
+                    throw ErrorMessage.invalidData
+                }
+                DispatchQueue.main.async {
+                    strongSelf.totalCount = json.totalCount ?? 1
+                    strongSelf.searchResults += results
+                    completed(.success(strongSelf.searchResults))
+                }
+                
             } catch {
                 completed(.failure(.invalidData))
             }
         }
 
         task.resume()
+    }
+    
+    func increasePage() {
+        pageNumber += 1
+    }
+    
+    func rollBackPage() {
+        if (pageNumber > 1) {
+            pageNumber -= 1
+        }
+    }
+    
+    func resetPages() {
+        pageNumber = 1
+        searchResults = []
     }
 }

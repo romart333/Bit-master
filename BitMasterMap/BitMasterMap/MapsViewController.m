@@ -26,7 +26,7 @@
 
 - (void)loadView {
     if (self.repoModel == nil) { return; }
-//    NSInteger sd = self.repoModel.sd;
+    
     GMSCameraPosition* camera = [GMSCameraPosition cameraWithLatitude:self.repoModel.latitude longitude:self.repoModel.longitude zoom:self.zoom];
 
     GMSMapView* mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];

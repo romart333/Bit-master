@@ -10,24 +10,20 @@ import UIKit
 
 class ReposTableViewController: UIViewController, UISearchBarDelegate {
     
-    private let perPageCount = 20
-    
-    private var currentPageNumber = 1
-    
-    private let startPageNumber = 1
-    
-    // Github api doesn't let to get more than 1000 repos
-    private let limitRepoCount = 1000
-    
     @IBOutlet private weak var emptyDataLabel: UILabel!
-    
     @IBOutlet private weak var searchBar: UISearchBar!
-    
     @IBOutlet private weak var tableView: UITableView!
     
-    private let cellIndentifier = "tableCell"
+    private let repoCellIndentifier = "repoCell"
+    private let loadingCellIndentifier = "loadingCell"
     
     private var repos = [RepoModel]()
+    
+    private var searchBarText: String? {
+        searchBar.text
+    }
+    
+    private var needNextPage: Bool = false
     
     override func viewDidLoad() {
         
@@ -35,7 +31,6 @@ class ReposTableViewController: UIViewController, UISearchBarDelegate {
         searchBar.delegate = self
         emptyDataLabel.isHidden = false
         tableView.isHidden = true
-        print("loaded")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,24 +55,29 @@ class ReposTableViewController: UIViewController, UISearchBarDelegate {
         tableView.setBottomInset(to: 0)
     }
     
+    private weak var timer: Timer?
+    private let fetchTimeInterval = 0.5
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         if searchText.isEmpty {
             tableView.isHidden = true
             emptyDataLabel.isHidden = false
+            return
         }
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        if let text = searchBar.text, !text.isEmpty {
-            tableView.isHidden = false
-            emptyDataLabel.isHidden = true
-            fetchRepositories(repoName: text)
-        }
+        tableView.isHidden = false
+        emptyDataLabel.isHidden = true
+        APIService.shared.resetPages()
+        needNextPage = false
+        
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: self.fetchTimeInterval, target: self, selector: #selector(fetchRepositories), userInfo: nil, repeats: false)
+            
     }
     
     func openMap(repoModel: RepoModel) {
+        
         let mapViewContoller = MapsViewController()
         mapViewContoller.repoModel = repoModel
         if let topVC = self.navigationController?.topViewController, topVC.isKind(of: self.classForCoder) {
@@ -85,73 +85,42 @@ class ReposTableViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
-    func fetchRepositories(repoName: String) {
-//        timer?.invalidate()
-//        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
-//        Это должно быть в серч баре. Запрос в сеть каждые о.5 секунд
-//        }
-        
-        APIService.shared.getResults(repoName: repoName, perPageCount: perPageCount, pageNumber: currentPageNumber) {[weak self] result in
+    @objc func fetchRepositories() {
+        var pageWasIncreased: Bool = false
+        if (needNextPage && APIService.shared.hasMore) {
+            APIService.shared.increasePage()
+            pageWasIncreased = true
+        }
+        guard let searchText = searchBarText, !searchText.isEmpty else {
+            if pageWasIncreased {
+                APIService.shared.rollBackPage()
+            }
+            return
+        }
+        APIService.shared.getResults(searchText: searchText) {[weak self] result in
                     
             switch result {
             case .success(let results):
-                guard let repos = results.items else {return}
-                self?.repos = repos
-                DispatchQueue.main.async {
+                    self?.repos = results
                     self?.tableView.reloadData()
-                }
 
-                case .failure(let error):
-                    DispatchQueue.main.async {
-                        let ac = UIAlertController(title: error.rawValue, message: nil, preferredStyle: .alert)
-                        ac.addAction(UIAlertAction(title: "OK", style: .default))
-                        self?.present(ac, animated: true)
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    if pageWasIncreased {
+                        APIService.shared.rollBackPage()
                     }
-                    print(error)
+                    let ac = UIAlertController(title: error.rawValue, message: nil, preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    
+                    self?.present(ac, animated: true)
+                }
+                print(error)
             }
         }
     }
     
-//    func getRepositories(q: String) {
-//
-//        guard let url = URL(string: "https://api.github.com/search/repositories?q=\(q)+in:name&sort=stars&order=desc&per_page=\(perPageCount)&page=\(currentPageNumber)") else { return }
-//        let urlRequest = URLRequest(url: url)
-//
-//        let dataTask = URLSession.shared.dataTask(with: urlRequest) { [weak self] (data, response, error) in
-//            guard let data = data else { return }
-//
-//            let jsonDecoder = JSONDecoder()
-//            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-////            var repos: ReposModel!
-////            do {
-////                 repos = try jsonDecoder.decode(ReposModel.self, from: data)}
-////                catch {
-////                    print(error)
-////                }
-//
-//            guard let repos = try? jsonDecoder.decode(ReposModel.self, from: data) else {return}
-//
-//            guard let strongSelf = self else { return }
-//            guard let items = repos.items else { print("items 0");return }
-//
-//            strongSelf.repos = items
-//
-//            DispatchQueue.main.async { [weak self] in
-//                guard let strongSelf = self else { return }
-//                strongSelf.tableView.reloadData()
-//                strongSelf.increasePageNumber()
-//            }
-//        }
-//        dataTask.resume()
-//    }
-    
-    func increasePageNumber() {
-//        currentPageNumber += perPageCount
-    }
-    
-    func wasLimitReached() -> Bool {
-        return false
-//        return currentPageNumber * perPageCount >= limitRepoCount
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.endEditing(true)
     }
 }
 
@@ -161,26 +130,28 @@ extension ReposTableViewController: UITableViewDataSource {
         repos.count
     }
     
-//    func tableView(_ tableView: UITableView,
-//                   willDisplay cell: UITableViewCell,
-//                   forRowAt indexPath: IndexPath) {
-//        
-//        if indexPath.row > repos.count && !wasLimitReached() {
-//            increasePageNumber()
-//        }
-//    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath) as? RepoTableViewCell
+        if indexPath.row == repos.count - 1 && APIService.shared.hasMore {
+            let cell = tableView.dequeueReusableCell(withIdentifier: loadingCellIndentifier)
+            return cell ?? UITableViewCell()
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: repoCellIndentifier, for: indexPath) as? RepoTableViewCell
         let repoModel = self.repos[indexPath.row]
         
-        cell?.setBackgroundColorForOpenMapButton(color: UIColor.blue)
         cell?.configureCellWith(repoModel: repoModel)
         cell?.closure = { [weak self] in
             self?.openMap(repoModel: repoModel)
         }
-           
+        
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == repos.count - 1 {
+            needNextPage = true
+            fetchRepositories()
+        }
     }
 }
 
@@ -197,4 +168,3 @@ extension UITableView {
         self.scrollIndicatorInsets = edgeInset
     }
 }
-

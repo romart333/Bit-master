@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UeR-yH-DFT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UeR-yH-DFT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +29,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eOC-q4-cuw">
                                 <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="120" id="U0v-ev-hHM" customClass="RepoTableViewCell" customModule="BitMasterMap" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repoCell" rowHeight="120" id="U0v-ev-hHM" customClass="RepoTableViewCell" customModule="BitMasterMap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U0v-ev-hHM" id="FCu-8S-VCC">
@@ -53,19 +53,19 @@
                                                     <rect key="frame" x="130" y="11" width="264" height="98"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repo name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcA-Eb-G6n" userLabel="RepoNameLabel">
-                                                            <rect key="frame" x="0.0" y="0.0" width="136" height="37.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="136" height="29.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcd-D3-KAk" userLabel="StarGazingCountLabel">
-                                                            <rect key="frame" x="0.0" y="44.5" width="79.5" height="22.5"/>
+                                                            <rect key="frame" x="0.0" y="36.5" width="79.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="X2d-31-1uM">
-                                                            <rect key="frame" x="0.0" y="74" width="22" height="24"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="SF_Star_Image" translatesAutoresizingMaskIntoConstraints="NO" id="EoL-k0-x0B">
+                                                            <rect key="frame" x="0.0" y="61.5" width="44" height="36.5"/>
                                                         </imageView>
                                                     </subviews>
                                                 </stackView>
@@ -85,8 +85,26 @@
                                             <outlet property="openMapButton" destination="v8e-cl-gzN" id="ggr-6G-KvK"/>
                                             <outlet property="repoNameLabel" destination="dcA-Eb-G6n" id="7dt-Do-6ne"/>
                                             <outlet property="starGazingCountLabel" destination="Lcd-D3-KAk" id="SaZ-LS-fuz"/>
-                                            <outlet property="starImageView" destination="X2d-31-1uM" id="ksw-vK-GER"/>
+                                            <outlet property="starImageView" destination="EoL-k0-x0B" id="HT7-PO-r1w"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="loadingCell" rowHeight="120" id="HIa-p5-GT6" customClass="RepoTableViewCell" customModule="BitMasterMap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="148" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HIa-p5-GT6" id="m7D-L9-cJ2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="uUq-SL-NyZ">
+                                                    <rect key="frame" x="197" y="50" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uUq-SL-NyZ" firstAttribute="centerX" secondItem="m7D-L9-cJ2" secondAttribute="centerX" id="7mS-Zt-EoA"/>
+                                                <constraint firstItem="uUq-SL-NyZ" firstAttribute="centerY" secondItem="m7D-L9-cJ2" secondAttribute="centerY" id="BZP-7V-43A"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -138,6 +156,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="star" catalog="system" width="64" height="58"/>
+        <image name="SF_Star_Image" width="44" height="44"/>
     </resources>
 </document>

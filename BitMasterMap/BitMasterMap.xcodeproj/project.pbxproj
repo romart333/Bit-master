@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		099F2EDAC12D72F5A3735ED3 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A454F7D9EB880E5BDC9FD81 /* Localized.swift */; };
 		A2EB655E5BD12013B19A0D97 /* libPods-BitMasterMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F106F56FCAD2A30CEFCC1442 /* libPods-BitMasterMap.a */; };
+		B35FF91A33B4C880629BFD3D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8E6B51A5274DD45A19A9414 /* Localizable.strings */; };
 		EF0A182824ACA0790066A2B1 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0A182724ACA0790066A2B1 /* APIService.swift */; };
 		EF0A182B24ACA25B0066A2B1 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0A182A24ACA25B0066A2B1 /* ErrorMessage.swift */; };
 		EF65DF4C24950842000E16FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65DF4B24950842000E16FE /* AppDelegate.swift */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		56365887B55853A801C0F10D /* Pods-BitMasterMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitMasterMap.debug.xcconfig"; path = "Target Support Files/Pods-BitMasterMap/Pods-BitMasterMap.debug.xcconfig"; sourceTree = "<group>"; };
+		5A454F7D9EB880E5BDC9FD81 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		836A3D3994A41BB1481A035B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8A68DCAB6017524C5CA68457 /* Pods-BitMasterMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitMasterMap.release.xcconfig"; path = "Target Support Files/Pods-BitMasterMap/Pods-BitMasterMap.release.xcconfig"; sourceTree = "<group>"; };
 		EF0A182724ACA0790066A2B1 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		EF0A182A24ACA25B0066A2B1 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
@@ -60,6 +64,22 @@
 				F106F56FCAD2A30CEFCC1442 /* libPods-BitMasterMap.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B396A46446513BC95210632A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C8E6B51A5274DD45A19A9414 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E9938068E64A2560CB41128C /* HappyCodingSupport */ = {
+			isa = PBXGroup;
+			children = (
+				5A454F7D9EB880E5BDC9FD81 /* Localized.swift */,
+			);
+			path = HappyCodingSupport;
 			sourceTree = "<group>";
 		};
 		EF0A182624AC9F630066A2B1 /* Services */ = {
@@ -113,6 +133,8 @@
 				EF6ED40324A5299B00C1014F /* MapsViewController.h */,
 				EF6ED40524A529B900C1014F /* MapsViewController.m */,
 				EF6ED40424A529B900C1014F /* BitMasterMap-Bridging-Header.h */,
+				B396A46446513BC95210632A /* Resources */,
+				E9938068E64A2560CB41128C /* HappyCodingSupport */,
 			);
 			path = BitMasterMap;
 			sourceTree = "<group>";
@@ -190,6 +212,7 @@
 				EF65DF5824950843000E16FE /* LaunchScreen.storyboard in Resources */,
 				EF65DF5524950843000E16FE /* Assets.xcassets in Resources */,
 				EF65DF5324950842000E16FE /* Main.storyboard in Resources */,
+				B35FF91A33B4C880629BFD3D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,9 +227,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BitMasterMap/Pods-BitMasterMap-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BitMasterMap/Pods-BitMasterMap-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -250,12 +277,21 @@
 				EF6ED40624A529B900C1014F /* MapsViewController.m in Sources */,
 				EF65DF6424952386000E16FE /* MapViewController.swift in Sources */,
 				EF65DF60249516AC000E16FE /* RepoModel.swift in Sources */,
+				099F2EDAC12D72F5A3735ED3 /* Localized.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C8E6B51A5274DD45A19A9414 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				836A3D3994A41BB1481A035B /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EF65DF5124950842000E16FE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

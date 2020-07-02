@@ -18,9 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let token = "AIzaSyAJ6BvwElwc17aiYOuGk5mcKp2v24EO6lY"
         GMSServices.provideAPIKey(token)
         
-        
-        
-        // Override point for customization after application launch.
         return true
     }
 }
