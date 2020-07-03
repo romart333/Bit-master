@@ -19,7 +19,6 @@
 		EF65DF5824950843000E16FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF65DF5624950843000E16FE /* LaunchScreen.storyboard */; };
 		EF65DF60249516AC000E16FE /* RepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65DF5F249516AC000E16FE /* RepoModel.swift */; };
 		EF65DF6224951F19000E16FE /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65DF6124951F19000E16FE /* RepoTableViewCell.swift */; };
-		EF65DF6424952386000E16FE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65DF6324952386000E16FE /* MapViewController.swift */; };
 		EF6ED40624A529B900C1014F /* MapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6ED40524A529B900C1014F /* MapsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,6 @@
 		EF65DF5924950843000E16FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF65DF5F249516AC000E16FE /* RepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
 		EF65DF6124951F19000E16FE /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
-		EF65DF6324952386000E16FE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EF6ED40324A5299B00C1014F /* MapsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapsViewController.h; sourceTree = "<group>"; };
 		EF6ED40424A529B900C1014F /* BitMasterMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BitMasterMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		EF6ED40524A529B900C1014F /* MapsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapsViewController.m; sourceTree = "<group>"; };
@@ -119,24 +117,55 @@
 		EF65DF4A24950842000E16FE /* BitMasterMap */ = {
 			isa = PBXGroup;
 			children = (
+				EF976FDA24AF12B500277307 /* Storyboards */,
+				EF976FD924AF126700277307 /* Controller */,
+				EF976FD824AF124E00277307 /* Model */,
+				EF976FD724AF124000277307 /* View */,
 				EF0A182924ACA24D0066A2B1 /* Utils */,
 				EF0A182624AC9F630066A2B1 /* Services */,
 				EF65DF4B24950842000E16FE /* AppDelegate.swift */,
-				EF65DF4F24950842000E16FE /* ReposTableViewController.swift */,
-				EF65DF5124950842000E16FE /* Main.storyboard */,
-				EF65DF5624950843000E16FE /* LaunchScreen.storyboard */,
 				EF65DF5424950843000E16FE /* Assets.xcassets */,
 				EF65DF5924950843000E16FE /* Info.plist */,
-				EF65DF5F249516AC000E16FE /* RepoModel.swift */,
-				EF65DF6124951F19000E16FE /* RepoTableViewCell.swift */,
-				EF65DF6324952386000E16FE /* MapViewController.swift */,
-				EF6ED40324A5299B00C1014F /* MapsViewController.h */,
-				EF6ED40524A529B900C1014F /* MapsViewController.m */,
 				EF6ED40424A529B900C1014F /* BitMasterMap-Bridging-Header.h */,
 				B396A46446513BC95210632A /* Resources */,
 				E9938068E64A2560CB41128C /* HappyCodingSupport */,
 			);
 			path = BitMasterMap;
+			sourceTree = "<group>";
+		};
+		EF976FD724AF124000277307 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF65DF6124951F19000E16FE /* RepoTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EF976FD824AF124E00277307 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF65DF5F249516AC000E16FE /* RepoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF976FD924AF126700277307 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EF65DF4F24950842000E16FE /* ReposTableViewController.swift */,
+				EF6ED40324A5299B00C1014F /* MapsViewController.h */,
+				EF6ED40524A529B900C1014F /* MapsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EF976FDA24AF12B500277307 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EF65DF5124950842000E16FE /* Main.storyboard */,
+				EF65DF5624950843000E16FE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		F85D9BFDE338D9F546271405 /* Pods */ = {
@@ -275,7 +304,6 @@
 				EF65DF4C24950842000E16FE /* AppDelegate.swift in Sources */,
 				EF0A182B24ACA25B0066A2B1 /* ErrorMessage.swift in Sources */,
 				EF6ED40624A529B900C1014F /* MapsViewController.m in Sources */,
-				EF65DF6424952386000E16FE /* MapViewController.swift in Sources */,
 				EF65DF60249516AC000E16FE /* RepoModel.swift in Sources */,
 				099F2EDAC12D72F5A3735ED3 /* Localized.swift in Sources */,
 			);

@@ -37,7 +37,6 @@
     marker.title = self.repoModel.name;
     marker.snippet = [NSString stringWithFormat:@"%d", [self.repoModel.stargazersCount intValue]];
     marker.map = mapView;
-    NSLog(@"showing map... ");
     mapView.delegate = self;
 }
 @end

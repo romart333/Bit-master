@@ -31,6 +31,7 @@ class ReposTableViewController: UIViewController, UISearchBarDelegate {
         searchBar.delegate = self
         emptyDataLabel.isHidden = false
         tableView.isHidden = true
+        tableView.allowsSelection = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -147,12 +148,18 @@ extension ReposTableViewController: UITableViewDataSource {
         return cell ?? UITableViewCell()
     }
     
+//     func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+//        table
+//    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == repos.count - 1 {
             needNextPage = true
             fetchRepositories()
         }
     }
+    
+    
 }
 
 extension ReposTableViewController: UITableViewDelegate {
